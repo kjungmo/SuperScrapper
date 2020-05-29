@@ -3,11 +3,11 @@
   <head>
     <title>Job Search</title>
     <style>
-      section {
-        display:grid;
-        gap:20ps;
-        grid-template-columns: repeat(4, 1f4);
-      }
+        section {
+          display:grid;
+          gap:20ps;
+          grid-template-columns: repeat(4, 1fr);
+        }
     </style>
   </head>
   <body>
@@ -19,10 +19,10 @@
       <h4>Location</h4>
       <h4>Link</h4>
       {% for job in jobs %}  
-      <span>{{job.title}}</span>
-      <span>{{job.company}}</span>
-      <span>{{job.location}}</span>
-      <a href="{{job.link}}" target="_blank">Apply</a>
+        <span>{{job.title}}</span>
+        <span>{{job.company}}</span>
+        <span>{{job.location}}</span>
+        <a href="{{job.link}}" target="_blank">Apply</a>
       {% endfor %}
     <section>
   </body>
