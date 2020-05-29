@@ -16,9 +16,9 @@ def report():
     word = request.args.get('word')
     if word:
         word = word.lower()  #대문자 입력해도 소문자로 전환해줌
-        fromDb = db.get(word)
-        if fromDb:
-            jobs = fromDb
+        existingjobs = db.get(word)
+        if existingjobs:
+            jobs = existingjobs
         else:
             jobs = get_jobs(word)
             db[word] = jobs
