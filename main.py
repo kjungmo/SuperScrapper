@@ -1,6 +1,9 @@
 from flask import Flask, render_template, request, redirect
 from scrapper import get_jobs
+
 app = Flask("SuperScrapper")
+
+db = {}
 
 @app.route("/")
 def home():
