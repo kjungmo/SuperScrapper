@@ -1,10 +1,10 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask("SuperScrapper")
 
 @app.route("/")
 def home():
-  return "<h1>Job Search</h1><form><input placeholder='What job do you want?' required/><button>Search</button>"
+  return render_template("potato.html")
 
 
 
