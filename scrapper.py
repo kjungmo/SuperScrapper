@@ -25,11 +25,11 @@ def extract_job(html):
     }
 
 
-def extract_jobs(last_page):
+def extract_jobs(last_page, url):  #여기에 url 채우는 것을 깜빡하는 바람에 이 method 내에서
     jobs = []
     for page in range(last_page):
         print(f"Scrapping SO: Page: {page}")
-        result = requests.get(f"{url}&pg={page+1}")
+        result = requests.get(f"{url}&pg={page+1}")   #여기 url이 undefined 했다고 나왔었다
         soup = BeautifulSoup(result.text, "html.parser")
         results = soup.find_all("div", {"class": "-job"})
         for result in results:
@@ -41,5 +41,5 @@ def extract_jobs(last_page):
 def get_jobs(word):
     url = f"https://stackoverflow.com/jobs?q={word}"
     last_page = get_last_page(url)
-    jobs = extract_jobs(last_page, url)
+    jobs = extract_jobs(last_page, url) #여기에 있는 last_page와 url을 위에도 같은 method에 넣어줘야 한다
     return jobs
