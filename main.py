@@ -4,10 +4,8 @@ app = Flask("SuperScrapper")
 
 @app.route("/")
 def home():
-  return "Hello! Welcome to mi casa!"
+  return "<h1>Job Search</h1><form><input placeholder='What job do you want?' required/><button>Search</button>"
 
-@app.route("/contact")
-def potato():
-  return "Contact me!"
+
 
 app.run(host="0.0.0.0")
